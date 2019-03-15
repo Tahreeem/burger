@@ -10,15 +10,9 @@ var router = express.Router();
 
 router.get("/api/burgers", function (req, res) {
 
-
-
-
-
 });
 
 
-
-// Route for saving/updating an Article's associated Note
 router.post("/api/burgers", function (req, res) {
 
     var parameters = {
@@ -30,8 +24,6 @@ router.post("/api/burgers", function (req, res) {
     burgerModel.create(parameters, function (result) {
         res.json(result.insertId);
     });
-
-
 });
 
 router.put("/api/burgers", function (req, res) {
@@ -42,7 +34,6 @@ router.put("/api/burgers", function (req, res) {
     burgerModel.update(set, where, function (result) {
         res.json(result);
     });
-
 });
 
 

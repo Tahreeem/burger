@@ -28,45 +28,13 @@ app.set("view engine", "handlebars");
 app.set('views', path.join(__dirname, 'views'));
 
 
-// Import routes and give the server access to them.
 require("./routes/htmlRoutes.js")(app);
 var routes = require("./routes/apiRoutes.js");
 app.use(routes);
 
 
 
-
-//PUT SEQUELIZE STUFF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 app.listen(PORT, function () {
     console.log("App running on port " + PORT + "!");
 });
 
-
-
-// axios.get("https://codepen.io/julesforrest/full/QaBvPe").then(function (response) {
-
-//     var $ = cheerio.load(response.data); //load response html into cheerio and save it to $ for a shorthand selector
-
-//     return $.html();
-
-// }).then((scraped) => {
-
-
-
-
-//     fs.writeFile("C:/Users/Tahreem/Documents/WebDev/burger/axiosTest", scraped, function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-
-//         console.log("The file was saved!");
-//     });
-
-
-
-
-//     //console.log(scraped);
-
-// });

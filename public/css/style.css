@@ -7,9 +7,6 @@ body, html {
 }
 
 .action {
-  /* height: 100%; */
-  /* background: white; */
-  /* overflow-x: scroll; */
   font-family: 'Nunito', sans-serif;
   max-width: 600px;
   padding: 1rem;

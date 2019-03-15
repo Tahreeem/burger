@@ -36,24 +36,13 @@ orm.update = function updateBurger(table, set, where, cb) {
             parameters,
             function (error, results) {
                 if (error) throw error;
-                
+
                 // cb(results);
                 resolve(cb(results));
             }
         );
-
-
-
-
     });
 }
-
-
-
-// updateStock(  //updating globally or in database
-//     { stock_quantity: resultZero[0].stock_quantity },
-//     { item_id: resultZero[0].item_id }
-// );
 
 
 orm.all = function printAllProducts(table, cb) {
@@ -67,7 +56,6 @@ orm.all = function printAllProducts(table, cb) {
 
                 resolve(cb(results));
             });
-
     });
 }
 

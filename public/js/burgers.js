@@ -4,8 +4,6 @@ $(function () {
 
   $(".create-burger").on("click", function (event) {  //if want on submit instead, the $('element') has to be the form element, not buttob
 
-    //event.preventDefault();
-
     var newBurger = {
       "burger_name": $("#create-burger-input").val().trim(),
       "burger_devoured": false
