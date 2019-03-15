@@ -1,0 +1,17 @@
+<article id={{this.burger_name}}>
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{this.burger_name}}</h2>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                egestas.</p>
+
+            {{#if this.burger_devoured}}
+            {{else}}
+            <a href="#" class="devour" data-id={{this.burger_id}}>Devour!</a>
+            {{/if}}
+
+            {{!-- <a href="#" class="takeout">Takeout</a> --}}
+        </div>
+    </div>
+</article>

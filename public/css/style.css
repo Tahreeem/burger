@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald|Nunito:400,700);
+/* Layout */
+body, html {
+  height: 100%;
+  background: #eee;
+  overflow-x: scroll;
+}
+
+.action {
+  /* height: 100%; */
+  /* background: white; */
+  /* overflow-x: scroll; */
+  font-family: 'Nunito', sans-serif;
+  max-width: 600px;
+  padding: 1rem;
+  margin: 5rem auto 2rem;
+}
+
+.main-content , .devoured-content {
+  max-width: 600px;
+  padding: 1rem;
+  margin: 5rem auto 2rem;
+}
+.main-content > article , .devoured-content > article {
+  margin: 0 0 3rem 0;
+}
+
+
+/* Header */
+.site-header {
+  display: flex;
+  height: 100%;
+  background: white;
+}
+@media (max-width: 700px) {
+  .site-header {
+    height: auto;
+    display: block;
+  }
+  .site-header .header-content,
+  .site-header .hero-graphic {
+    width: 100%;
+  }
+  .site-header .hero-graphic {
+    height: 200px;
+  }
+  .site-header .title-area {
+    order: 1;
+  }
+  .site-header .toc {
+    order: 2;
+    background: #eee;
+    margin: 1rem -2rem 0;
+    padding: 1rem 2rem;
+  }
+}
+
+.header-content {
+  width: 50%;
+}
+
+.hero-graphic {
+  width: 50%;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/burgers.jpg);
+  background-size: cover;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.title-area {
+  order: 2;
+}
+.title-area > p {
+  color: red;
+}
+
+.byline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.byline > span {
+  color: #999;
+}
+
+/* Nav */
+.toc > ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.6;
+}
+.toc > ul > li {
+  display: inline-block;
+  counter-increment: nav;
+}
+.toc > ul > li > a {
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.toc > ul > li > a::before {
+  content: "/";
+  margin: 0 0.5rem;
+  color: red;
+}
+.toc > ul > li > a::after {
+  content: counter(nav);
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+.toc > ul > li > a:hover, .toc > ul > li > a:focus {
+  color: red;
+}
+.toc > ul > li:first-child a::before {
+  display: none;
+}
+
+/* Type */
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 3.2rem;
+  border-bottom: 4px solid black;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  border-width: 3px;
+  color: #555;
+}

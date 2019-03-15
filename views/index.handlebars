@@ -1,0 +1,100 @@
+<header class="site-header">
+
+    <div class="header-content">
+
+        <div class="title-area">
+
+            <h1>Hamburgers</h1>
+
+            <p>This is a sub-headline. Yadda yadda stuff about hamburgers. You know how subheadlines work.</p>
+
+            <div class="byline">
+                <span>By</span>
+                Johnny Hamburgers
+            </div>
+
+        </div>
+
+        <nav role='navigation' class="toc">
+            <ul>
+                {{#each burger}}
+                {{> burgerLink}}
+                {{/each}}
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="hero-graphic">
+        <!-- always, right? -->
+    </div>
+
+</header>
+
+<main class="main-content">
+
+    {{#each burger}}
+
+    {{#if burger_devoured}}
+    {{else}}
+    {{> burgerCard}}
+    {{/if}}
+
+    {{/each}}
+
+</main>
+
+<div class="action row align-items-center">
+
+    <div class="container">
+        <form>
+            <div class="form-group row align-items-center">
+
+                <div class="col">
+                    <label for="exampleFormControlTextarea1">Create a new burger!</label>
+                    <textarea class="form-control" id="create-burger-input" rows="1"></textarea>
+                </div>
+                <div class="col align-self-end">
+                    <button type="button" class="btn btn-primary create-burger">Submit</button>
+                </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<main class="devoured-content">
+
+
+
+    <h1>Devoured</h1>
+
+    {{#each burger}}
+
+    {{#if burger_devoured}}
+    {{> burgerCard}}
+    {{else}}
+    {{/if}}
+
+    {{/each}}
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="burger-template" type="text/x-handlebars-template">
+    {{> burgerCard }}
+</script>

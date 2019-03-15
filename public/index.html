@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Magazine Layout Attempt #1</title>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin = "anonymous" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type='text/javascript'
+    src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+  <!--
+  WELP. That's about what I'm looking at.
+  Picture: http://d.pr/i/giPt/qCX2bzdj
+
+  (Thanks for watching! Gotta run :))
+  http://codepen.io/chriscoyier/full/mewZzy/
+
+  Side by side layout will work on a large screen. Flexbox makes that super easy. The hero graphic fills the area thanks to `background-size: cover`; It's super enormous though, and probably could benefit from differnet sizes in media queries in the CSS.
+
+  Flexbox was super helpful with helping me keep the <h1> tag as the very first thing in the source order, yet, positioning to the lower left. Autoprefixer helps a ton with flexbox.
+
+  SCSS was helpful in letting me nest that media query.
+
+  CSS counters was a neat little touch in the menu area. The numbers don't really mean anything. In the real magazine they are page numbers. Would be nice to somehow make sure the "/"s don't start a new line...
+
+  The main content area is exactly below the "fold" thanks to 100% height of the main header (which we reset at the breakpoint). That area didn't need any responsive help since it just had a `max-width` (largely for line-length readability).
+
+  
+-->
+
+  <header class="site-header">
+
+    <div class="header-content">
+
+      <div class="title-area">
+
+        <h1>Hamburgers</h1>
+
+        <p>This is a sub-headline. Yadda yadda stuff about hamburgers. You know how subheadlines work.</p>
+
+        <div class="byline">
+          <span>By</span>
+          Johnny Hamburgers
+        </div>
+
+      </div>
+
+      <nav role='navigation' class="toc">
+        <ul>
+          <li><a href="#hamburger-juicy">Juicy Hamburgers</a></li>
+          <li><a href="#hamburger-bacon">Bacon Cheeseburgers</a></li>
+          <li><a href="#hamburger-squash">Squash 'n' Hamburgers</a></li>
+          <li><a href="#hamburger-fourth">Fourth of July Hamburgers</a></li>
+          <li><a href="#hamburger-juicy">Juicy Hamburgers</a></li>
+          <li><a href="#hamburger-fourth">Fourth of July Hamburgers</a></li>
+          <li><a href="#0">Squash 'n' Hamburgers</a></li>
+          <li><a href="#0">Bacon Cheeseburgers</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="hero-graphic">
+      <!-- always, right? -->
+    </div>
+
+  </header>
+
+  <main class="main-content">
+
+    <!-- <article id="hamburger-juicy">
+
+      <h2>Juicy Hamburger</h2>
+
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    </article> -->
+
+
+    <article id="hamburger-juicy">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Juicy Hamburger</h2>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Vestibulum tortor
+            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean
+            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+          <a href="#" class="card-link">Devour!</a>
+          <a href="#" class="card-link">Takeout</a>
+        </div>
+      </div>
+    </article>
+
+    <article id="hamburger-bacon">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Bacon Cheeseburgers</h2>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Vestibulum tortor
+            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean
+            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+          <a href="#" class="card-link">Devour!</a>
+          <a href="#" class="card-link">Takeout</a>
+        </div>
+      </div>
+    </article>
+
+    <article id="hamburger-squash">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Squash 'n' Hamburgers</h2>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Vestibulum tortor
+            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean
+            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+          <a href="#" class="card-link">Devour!</a>
+          <a href="#" class="card-link">Takeout</a>
+        </div>
+      </div>
+    </article>
+
+    <article id="hamburger-fourth">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Fourth of July Hamburger</h2>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Vestibulum tortor
+            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean
+            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+          <a href="#" class="card-link">Devour!</a>
+          <a href="#" class="card-link">Takeout</a>
+        </div>
+      </div>
+    </article>
+
+
+  </main>
+
+  <div class="action row align-items-center">
+    <!-- <form>
+      <div class="form-group col-6">
+        <label for="exampleFormControlTextarea1">Create a new burger!</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+
+
+
+
+
+
+    <div class="container">
+      <form>
+        <div class="form-group row align-items-center">
+
+          <div class="col">
+            <label for="exampleFormControlTextarea1">Create a new burger!</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+          </div>
+          <div class="col align-self-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+      </form>
+
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        Devoured
+      </div>
+      Takeout
+      <div class="col-6">
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+
+</body>
+
+</html>
