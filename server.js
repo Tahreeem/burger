@@ -8,7 +8,7 @@ require('dotenv');
 
 //____________________________________________________________________________________________________
 
-var PORT = process.env.PORT || 3000;
+var PORT = 3306;//process.env.PORT;
 
 var app = express();
 
