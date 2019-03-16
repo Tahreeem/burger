@@ -16,7 +16,7 @@ router.get("/api/burgers", function (req, res) {
 router.post("/api/burgers", function (req, res) {
 
     var parameters = {
-        //burger_id: req.body.burger_id,
+        //id: req.body.id,
         burger_name: req.body.burger_name,
         burger_devoured: false
     }
@@ -29,7 +29,7 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers", function (req, res) {
 
     var set = { burger_devoured: true };
-    var where = { burger_id: req.body.burger_id };
+    var where = { id: req.body.id };
 
     burgerModel.update(set, where, function (result) {
         res.json(result);

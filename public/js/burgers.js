@@ -27,7 +27,7 @@ $(function () {
   $(".devour").on("click", function (event) {
 
     var updateBurger = {
-      burger_id: $(this).data("id")
+      id: $(this).data("id")
     }
 
     console.log(updateBurger);
@@ -39,8 +39,7 @@ $(function () {
       contentType: 'application/json; charset=utf-8',
       success: function () {
 
-        //location.reload();
-        window.location.replace("/burgers");
+        location.reload();
 
       },
       error: function () { console.log('error'); }
