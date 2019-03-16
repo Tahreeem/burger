@@ -9,7 +9,7 @@ $(function () {
       "burger_devoured": false
     }
 
-    $.ajax('http://localhost:3000/api/burgers', {
+    $.ajax('/api/burgers', {
       type: 'POST',
       data: JSON.stringify(newBurger),
       dataType: "json",
@@ -32,7 +32,7 @@ $(function () {
 
     console.log(updateBurger);
 
-    $.ajax('http://localhost:3000/api/burgers', {
+    $.ajax('/api/burgers', {
       type: 'PUT',
       data: JSON.stringify(updateBurger),
       dataType: "json",
